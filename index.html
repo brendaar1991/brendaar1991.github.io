@@ -820,33 +820,50 @@ I constantly improve my skills by building projects,
   }
   type();
 </script>
+	<!-- gallery -->	
 <script>
-    const track = document.getElementById('gallery-track');
-    const cards = track.querySelectorAll('.gallery-card');
-    const dotsContainer = document.getElementById('gallery-dots');
-    const totalSlides = Math.ceil(cards.length / 3);
-    let currentGallerySlide = 0;
+    const galleryTrack = document.getElementById('gallery-track');
+    const galleryCards = Array.from(galleryTrack.querySelectorAll('.gallery-card'));
+    
+    galleryCards.forEach(card => {
+        const clone = card.cloneNode(true);
+        galleryTrack.appendChild(clone);
+    });
 
-    for (let i = 0; i < totalSlides; i++) {
-        const dot = document.createElement('button');
-        dot.classList.add('gallery-dot');
-        if (i === 0) dot.classList.add('active');
-        dot.onclick = () => goToGallerySlide(i);
-        dotsContainer.appendChild(dot);
+    let galleryPos = 0;
+    let isPaused = false;
+    let animationId;
+    const cardWidth = galleryCards[0].offsetWidth + 24;
+    const totalWidth = cardWidth * galleryCards.length;
+
+    function animateGallery() {
+        if (!isPaused) {
+            galleryPos += 0.5;
+            if (galleryPos >= totalWidth) {
+                galleryPos = 0;
+            }
+            galleryTrack.style.transform = `translateX(-${galleryPos}px)`;
+        }
+        animationId = requestAnimationFrame(animateGallery);
     }
 
-    function goToGallerySlide(n) {
-        currentGallerySlide = n;
-        const cardWidth = cards[0].offsetWidth + 24;
-        track.style.transform = `translateX(-${n * 3 * cardWidth}px)`;
-        document.querySelectorAll('.gallery-dot').forEach((d, i) => {
-            d.classList.toggle('active', i === n);
-        });
-    }
+    galleryTrack.addEventListener('mouseenter', () => {
+        isPaused = true;
+    });
 
-    setInterval(() => {
-        goToGallerySlide((currentGallerySlide + 1) % totalSlides);
-    }, 4000);
+    galleryTrack.addEventListener('mouseleave', () => {
+        isPaused = false;
+    });
+
+    galleryTrack.addEventListener('touchstart', () => {
+        isPaused = true;
+    });
+
+    galleryTrack.addEventListener('touchend', () => {
+        setTimeout(() => { isPaused = false; }, 3000);
+    });
+
+    animateGallery();
 </script>
 	</body>
 </html>
