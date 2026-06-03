@@ -2080,13 +2080,17 @@ input, select, textarea {
     cursor: default;
     height: 3.5em;
     line-height: 3.5em;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 		#nav ul {
-			margin-bottom: 0;
-			list-style: none;
-			padding-left: 0;
-		}
+    margin-bottom: 0;
+    list-style: none;
+    padding-left: 0;
+    display: inline-flex;
+    white-space: nowrap;
+}
 
 		#nav li {
 			display: inline-block;
