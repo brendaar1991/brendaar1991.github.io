@@ -396,6 +396,57 @@ ul.social li a:hover:before {
 .gallery-dot:hover {
     background: #e8293a;
 }
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    text-align: left;
+}
+.contact-info h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #050310;
+    margin-bottom: 12px;
+}
+.contact-info p {
+    color: #666;
+    font-size: 0.9em;
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+.contact-item-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: #f0eeff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    flex-shrink: 0;
+}
+.contact-item-text h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9em;
+    font-weight: 700;
+    color: #050310;
+    margin-bottom: 2px;
+}
+.contact-item-text a {
+    font-size: 0.85em;
+    color: #3b5bdb;
+    text-decoration: none;
+}
+.contact-item-text a:hover {
+    color: #7c3aed !important;
+}		
 		
 }		
 </style>
@@ -781,7 +832,103 @@ I constantly improve my skills by building projects,
 </article>
   
 	<!-- Contact-->
+<article id="contact" class="wrapper style2">
+    <div class="container">
+        <header>
+            <h2 style="background: linear-gradient(135deg, #e8293a, #7c3aed, #3b5bdb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-family: 'Syne', sans-serif; font-weight: 700;">Contact</h2>
+            <p style="font-size: 0.9em;">Got a creative idea, exciting opportunity, or a vision to bring to life? Let's build something great together!</p>
+        </header>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Let's Connect</h3>
+                <p>Whether you have a project in mind, want to collaborate, or just want to say hello — feel free to reach out!</p>
+                <div class="contact-item">
+                    <div class="contact-item-icon">✉️</div>
+                    <div class="contact-item-text">
+                        <h4>Email</h4>
+                        <a href="barellanor91@gmail.com">barellanor91@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon"><i class="devicon-linkedin-plain colored"></i></div>
+                    <div class="contact-item-text">
+                        <h4>LinkedIn</h4>
+                        <a href="https://www.linkedin.com/in/brenda-arellano-romero/" target="_blank">brenda-arellano-romero</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon"><i class="devicon-github-original"></i></div>
+                    <div class="contact-item-text">
+                        <h4>GitHub</h4>
+                        <a href="https://github.com/brendaar1991" target="_blank">brendaar1991</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-info">
+                <h3>Based in</h3>
+                <div class="contact-item">
+                    <div class="contact-item-icon">📍</div>
+                    <div class="contact-item-text">
+                        <h4>Location</h4>
+                        <a>Greensboro, North Carolina</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">💼</div>
+                    <div class="contact-item-text">
+                        <h4>Current Role</h4>
+                        <a>Data Analyst</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-item-icon">🎓</div>
+                    <div class="contact-item-text">
+                        <h4>Education</h4>
+                        <a>MS Computer Science — NC A&T</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
 
+<!-- Footer -->
+<footer style="background:#fafafa; border-top:1px solid #eee; padding:48px 0 24px;">
+    <div class="container">
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:40px; text-align:left; margin-bottom:32px;">
+            <div>
+                <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px;">
+                    <span style="background:#7c3aed; color:white; border-radius:8px; padding:4px 8px; font-family:'Syne',sans-serif; font-weight:800; font-size:0.85em;">&lt;/&gt;</span>
+                    <span style="font-family:'Syne',sans-serif; font-weight:700; background:linear-gradient(135deg,#e8293a,#7c3aed,#3b5bdb); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">brenda.dev</span>
+                </div>
+                <p style="font-size:0.85em; color:#666; line-height:1.6; margin-bottom:0;">Data Analyst & Computer Science graduate passionate about turning data into meaningful insights.</p>
+            </div>
+            <div>
+                <h4 style="font-family:'Syne',sans-serif; font-weight:700; font-size:0.95em; color:#050310; margin-bottom:16px;">Quick Links</h4>
+                <ul style="list-style:none; padding:0; margin:0;">
+                    <li style="margin-bottom:8px;"><a href="#aboutme" style="font-size:0.85em; color:#666; text-decoration:none;">About Me</a></li>
+                    <li style="margin-bottom:8px;"><a href="#education" style="font-size:0.85em; color:#666; text-decoration:none;">Education</a></li>
+                    <li style="margin-bottom:8px;"><a href="#skills" style="font-size:0.85em; color:#666; text-decoration:none;">Skills</a></li>
+                    <li style="margin-bottom:8px;"><a href="#projects" style="font-size:0.85em; color:#666; text-decoration:none;">Projects</a></li>
+                    <li style="margin-bottom:8px;"><a href="#certifications" style="font-size:0.85em; color:#666; text-decoration:none;">Certifications</a></li>
+                    <li style="margin-bottom:8px;"><a href="#gallery" style="font-size:0.85em; color:#666; text-decoration:none;">Gallery</a></li>
+                    <li><a href="#contact" style="font-size:0.85em; color:#666; text-decoration:none;">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="font-family:'Syne',sans-serif; font-weight:700; font-size:0.95em; color:#050310; margin-bottom:16px;">Connect</h4>
+                <div style="display:flex; gap:12px;">
+                    <a href="https://github.com/brendaar1991" target="_blank" style="width:40px; height:40px; border-radius:8px; border:1px solid #eee; display:flex; align-items:center; justify-content:center; color:#333; text-decoration:none; font-size:1.2em; transition:all .2s;"><i class="devicon-github-original"></i></a>
+                    <a href="https://www.linkedin.com/in/brenda-arellano-romero/" target="_blank" style="width:40px; height:40px; border-radius:8px; border:1px solid #eee; display:flex; align-items:center; justify-content:center; color:#333; text-decoration:none; font-size:1.2em;"><i class="devicon-linkedin-plain colored"></i></a>
+                    <a href="mailto:youremail@gmail.com" style="width:40px; height:40px; border-radius:8px; border:1px solid #eee; display:flex; align-items:center; justify-content:center; color:#333; text-decoration:none; font-size:1.2em;">✉️</a>
+                </div>
+            </div>
+        </div>
+        <div style="border-top:1px solid #eee; padding-top:20px; text-align:center;">
+            <p style="font-size:0.8em; color:#999; margin-bottom:0;">&copy; 2025 Brenda Arellano Romero. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 
 		<!-- socials-->
 			<article id="gallery" class="wrapper style4">
