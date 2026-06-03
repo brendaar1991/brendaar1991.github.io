@@ -76,6 +76,82 @@ ul.social li a:hover:before {
     background-color: #7c3aed !important;
     color: #ffffff !important;
 }	
+.timeline {
+    position: relative;
+    padding: 0;
+    list-style: none;
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(135deg, #dc72a9, #7c3aed);
+    transform: translateX(-50%);
+}
+.timeline-item {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: calc(50% + 40px);
+    margin-bottom: 40px;
+    position: relative;
+}
+.timeline-item.right {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: calc(50% + 40px);
+}
+.timeline-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 24px;
+    max-width: 380px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    border: 1px solid #eee;
+    position: relative;
+}
+.timeline-arrow {
+    position: absolute;
+    top: 20px;
+    right: -16px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 16px solid #7c3aed;
+}
+.timeline-item.right .timeline-arrow {
+    right: auto;
+    left: -16px;
+    border-left: none;
+    border-right: 16px solid #7c3aed;
+}
+.timeline-date {
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #dc72a9;
+    margin-bottom: 6px;
+}
+.timeline-degree {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #050310;
+    margin-bottom: 4px;
+}
+.timeline-school {
+    color: #7c3aed;
+    font-size: 0.9em;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.timeline-desc {
+    color: #888;
+    font-size: 0.85em;
+    line-height: 1.6;
+}		
 }		
 </style>
 </head>
@@ -140,44 +216,41 @@ I constantly improve my skills by building projects,
 </article>
 <!-- education -->
 			<article id="education" class="wrapper style2">
-				<div class="container">
-					<header>
-						<h2>Education</h2>
-						<p></p>
-					</header>
-					<div class="row aln-center">
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="image fit" style="text-align: center;"><img src="images/photo02.png" alt=""style="width: 170px; height: 140px; "></span>
-								<h3>Guilford Technical Community College</h3>
-								<h3></h3>
-								<p>Associates in Computer Engineering</p>
-								<p></p>
-								<p></p>
-							</section>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="image fit" style="text-align: center;"><img src="images/photo01.png" alt=""style="width: 130px; height: 110px;"></span>
-								<h3>North Carolina A&T State University</h3>
-								<h3>Bachelor of Science</h3>
-								<p>Computer Science</p>
-								<p></p>
-							</section>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<section class="box style1">
-								<span class="image fit" style="text-align: center;"><img src="images/photo01.png" alt=""style="width: 130px; height: 110px;"></span>
-								<h3>North Carolina A&T State University</h3>
-								<h3>Masters of Science</h3>
-								<p>First-year Computer Science Graduate Student </p>
-								
-							</section>
-						</div>
-					</div>
-					
-				</div>
-			</article>
+    <div class="container">
+        <header>
+            <h2>Education</h2>
+        </header>
+        <ul class="timeline">
+            <li class="timeline-item">
+                <div class="timeline-card">
+                    <div class="timeline-arrow"></div>
+                    <div class="timeline-date">2019 — 2021</div>
+                    <div class="timeline-degree">Associates in Computer Engineering</div>
+                    <div class="timeline-school">Guilford Technical Community College</div>
+                    <div class="timeline-desc">Foundation in computer engineering principles and technology.</div>
+                </div>
+            </li>
+            <li class="timeline-item right">
+                <div class="timeline-card">
+                    <div class="timeline-arrow"></div>
+                    <div class="timeline-date">2021 — 2024</div>
+                    <div class="timeline-degree">Bachelor of Science — Computer Science</div>
+                    <div class="timeline-school">North Carolina A&T State University</div>
+                    <div class="timeline-desc">Focused on software engineering, data science, and machine learning.</div>
+                </div>
+            </li>
+            <li class="timeline-item">
+                <div class="timeline-date">2024 — Present</div>
+                <div class="timeline-card">
+                    <div class="timeline-arrow"></div>
+                    <div class="timeline-degree">Master of Science — Computer Science</div>
+                    <div class="timeline-school">North Carolina A&T State University</div>
+                    <div class="timeline-desc">Currently a first-year graduate student advancing in CS research.</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</article>
 
 <!-- Skills -->
 <article id="skills" class="wrapper style3">
