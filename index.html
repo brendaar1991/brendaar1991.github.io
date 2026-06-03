@@ -834,9 +834,11 @@ I constantly improve my skills by building projects,
     });
 
     let galleryPos = 0;
+    let isAutoPlaying = true;
     let isDragging = false;
     let dragStartX = 0;
     let dragStartPos = 0;
+    let animationId;
     const cardWidth = galleryCards[0].offsetWidth + 24;
     const totalWidth = cardWidth * galleryCards.length;
 
@@ -846,28 +848,34 @@ I constantly improve my skills by building projects,
         dot.classList.add('gallery-dot');
         if (i === 0) dot.classList.add('active');
         dot.onclick = () => {
+            isAutoPlaying = false;
+            cancelAnimationFrame(animationId);
             galleryPos = i * cardWidth;
+            galleryTrack.style.transition = 'transform 0.4s ease';
             galleryTrack.style.transform = `translateX(-${galleryPos}px)`;
-            updateDots();
+            setTimeout(() => galleryTrack.style.transition = '', 400);
+            updateDots(i);
         };
         dotsContainer.appendChild(dot);
     });
 
-    function updateDots() {
-        const activeIndex = Math.round(galleryPos / cardWidth) % galleryCards.length;
+    function updateDots(index) {
         document.querySelectorAll('.gallery-dot').forEach((d, i) => {
-            d.classList.toggle('active', i === activeIndex);
+            d.classList.toggle('active', i === index);
         });
     }
 
     function animateGallery() {
-        if (!isDragging) {
+        if (!isDragging && isAutoPlaying) {
             galleryPos += 1.5;
             if (galleryPos >= totalWidth) galleryPos = 0;
             galleryTrack.style.transform = `translateX(-${galleryPos}px)`;
-            updateDots();
+            const activeIndex = Math.round(galleryPos / cardWidth) % galleryCards.length;
+            updateDots(activeIndex);
         }
-        requestAnimationFrame(animateGallery);
+        if (isAutoPlaying) {
+            animationId = requestAnimationFrame(animateGallery);
+        }
     }
 
     // Mouse drag
@@ -885,7 +893,8 @@ I constantly improve my skills by building projects,
         if (galleryPos < 0) galleryPos = 0;
         if (galleryPos >= totalWidth) galleryPos = 0;
         galleryTrack.style.transform = `translateX(-${galleryPos}px)`;
-        updateDots();
+        const activeIndex = Math.round(galleryPos / cardWidth) % galleryCards.length;
+        updateDots(activeIndex);
     });
 
     window.addEventListener('mouseup', () => {
@@ -907,7 +916,8 @@ I constantly improve my skills by building projects,
         if (galleryPos < 0) galleryPos = 0;
         if (galleryPos >= totalWidth) galleryPos = 0;
         galleryTrack.style.transform = `translateX(-${galleryPos}px)`;
-        updateDots();
+        const activeIndex = Math.round(galleryPos / cardWidth) % galleryCards.length;
+        updateDots(activeIndex);
     });
 
     galleryTrack.addEventListener('touchend', () => {
@@ -915,7 +925,7 @@ I constantly improve my skills by building projects,
     });
 
     galleryTrack.style.cursor = 'grab';
-    animateGallery();
+    animationId = requestAnimationFrame(animateGallery);
 </script>
 	</body>
 </html>
