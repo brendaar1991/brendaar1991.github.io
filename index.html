@@ -204,14 +204,14 @@ ul.social li a:hover:before {
 .project-card {
     background: #fff;
     border-radius: 12px;
-    border: 1px solid #eee;
+    border: 2px solid transparent;
     overflow: hidden;
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 .project-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(124,58,237,0.12);
+    box-shadow: 0 0 15px 5px rgba(124,58,237,0.3);
     border-color: #7c3aed;
 }
 .project-card img {
@@ -418,8 +418,8 @@ I constantly improve my skills by building projects,
 <article id="projects" class="wrapper style3">
     <div class="container">
         <header>
-            <h2 style="background: linear-gradient(135deg, #e8293a, #7c3aed, #3b5bdb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-family: 'Syne', sans-serif; font-weight: 700;">Projects</h2>
-            <p style="font-size: 0.9em;">A collection of projects built through research, coursework, and personal exploration.</p>
+            <h2 style="background: linear-gradient(135deg, #e8293a, #7c3aed, #3b5bdb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-family: 'Syne', sans-serif; font-weight: 700;">PROJECTS</h2>
+            <p style="font-size: 1.0em;">A collection of projects built through research, coursework, and personal exploration.</p>
         </header>
         <div class="projects-grid">
             <div class="project-card">
