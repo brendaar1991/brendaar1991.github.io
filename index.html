@@ -832,37 +832,64 @@ I constantly improve my skills by building projects,
 
     let galleryPos = 0;
     let isPaused = false;
-    let animationId;
+    let isDragging = false;
+    let dragStartX = 0;
+    let dragStartPos = 0;
     const cardWidth = galleryCards[0].offsetWidth + 24;
     const totalWidth = cardWidth * galleryCards.length;
 
     function animateGallery() {
-        if (!isPaused) {
-            galleryPos += 0.5;
-            if (galleryPos >= totalWidth) {
-                galleryPos = 0;
-            }
+        if (!isPaused && !isDragging) {
+            galleryPos += 1.5;
+            if (galleryPos >= totalWidth) galleryPos = 0;
             galleryTrack.style.transform = `translateX(-${galleryPos}px)`;
         }
-        animationId = requestAnimationFrame(animateGallery);
+        requestAnimationFrame(animateGallery);
     }
 
-    galleryTrack.addEventListener('mouseenter', () => {
-        isPaused = true;
+    // Mouse drag
+    galleryTrack.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        dragStartX = e.clientX;
+        dragStartPos = galleryPos;
+        galleryTrack.style.cursor = 'grabbing';
     });
 
-    galleryTrack.addEventListener('mouseleave', () => {
-        isPaused = false;
+    window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const diff = dragStartX - e.clientX;
+        galleryPos = dragStartPos + diff;
+        if (galleryPos < 0) galleryPos = 0;
+        if (galleryPos >= totalWidth) galleryPos = 0;
+        galleryTrack.style.transform = `translateX(-${galleryPos}px)`;
     });
 
-    galleryTrack.addEventListener('touchstart', () => {
-        isPaused = true;
+    window.addEventListener('mouseup', () => {
+        isDragging = false;
+        galleryTrack.style.cursor = 'grab';
+    });
+
+    // Touch drag
+    galleryTrack.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        dragStartX = e.touches[0].clientX;
+        dragStartPos = galleryPos;
+    });
+
+    galleryTrack.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const diff = dragStartX - e.touches[0].clientX;
+        galleryPos = dragStartPos + diff;
+        if (galleryPos < 0) galleryPos = 0;
+        if (galleryPos >= totalWidth) galleryPos = 0;
+        galleryTrack.style.transform = `translateX(-${galleryPos}px)`;
     });
 
     galleryTrack.addEventListener('touchend', () => {
-        setTimeout(() => { isPaused = false; }, 3000);
+        isDragging = false;
     });
 
+    galleryTrack.style.cursor = 'grab';
     animateGallery();
 </script>
 	</body>
