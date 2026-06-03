@@ -44,7 +44,20 @@
     object-fit: cover;
     object-position: center bottom;
 }
-
+.typed-role {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #dc72a9;
+}
+.typed-cursor {
+    color: #16b8ce;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
 }		
 </style>
 </head>
@@ -70,6 +83,7 @@
                 <header>
                     <p style="font-size:1.3em; color:#000; margin-bottom:0.2em; font-weight:600;">Hi, I am</p>
                     <h2 class="gradient-name">Brenda <br>Arellano Romero</h2>
+					<p><span id="typed-role" class="typed-role"></span><span class="typed-cursor">|</span></p>
                 </header>
                 <p><strong>I’m a Computer Science graduate from North Carolina A&T State University and an emerging data scientist 
 					passionate about transforming data into actionable insights and building impactful,
@@ -495,6 +509,20 @@ I constantly improve my skills by building projects,
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+		<script>
+  const roles = ["Data Scientist", "Software Engineer", "Machine Learning Engineer", "Full Stack Developer", "VR Developer"];
+  let roleIndex = 0, charIndex = 0, deleting = false;
+  const el = document.getElementById('typed-role');
+  function type() {
+    const current = roles[roleIndex];
+    el.textContent = deleting ? current.substring(0, charIndex - 1) : current.substring(0, charIndex + 1);
+    deleting ? charIndex-- : charIndex++;
+    if (!deleting && charIndex === current.length) { deleting = true; setTimeout(type, 1800); return; }
+    if (deleting && charIndex === 0) { deleting = false; roleIndex = (roleIndex + 1) % roles.length; }
+    setTimeout(type, deleting ? 60 : 100);
+  }
+  type();
+</script>
 
 	</body>
 </html>
