@@ -251,7 +251,84 @@ ul.social li a:hover:before {
     background: #f0eeff;
     color: #7c3aed;
     border: 1px solid #e0d9ff;
-}		
+}
+		.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    text-align: left;
+}
+.cert-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    border: 2px solid transparent;
+}
+.cert-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 15px 5px rgba(124,58,237,0.3);
+    border-color: #7c3aed;
+}
+.cert-card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+.cert-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: #f0eeff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.4em;
+}
+.cert-info h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+    color: #050310;
+    margin-bottom: 4px;
+}
+.cert-info .cert-issuer {
+    color: #3b5bdb;
+    font-size: 0.85em;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+.cert-divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 16px 0;
+}
+.cert-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cert-id {
+    font-size: 0.8em;
+    color: #2d6a2d;
+    font-weight: 600;
+}
+.cert-view {
+    font-size: 0.85em;
+    color: #3b5bdb;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.cert-view:hover {
+    color: #7c3aed !important;
+}
 }		
 </style>
 </head>
@@ -490,54 +567,71 @@ I constantly improve my skills by building projects,
 		
 		<!-- certifications -->
 		<article id="certifications" class="wrapper style2">
-			<div class="container">
-				<header>
-					<h2>Certifications</h2>
-					<p></p>
-				</header>
-				<div class="row">
-					<div class="col-4 col-6-medium col-12-small">
-						<section class="box style1">
-							<a href="#" class="image featured"><img src="images/photo09.png" alt="" /></a>
-							<h3>Intro to Web Development</h3>
-							<h3></h3>
-							<p>CodePath</p>
-							<p>ID: 143471</p>
-						</section>
-					</div>
-					<div class="col-4 col-6-medium col-12-small">
-						<article class="box style1">
-							<a href="#" class="image featured"><img src="images/photo10.png" alt="" /></a>
-							<h3>Intro to Software Engineering</h3>
-							<p>CodePath</p>
-							<p>ID: 165811</p>
-						</article>
-					</div>
-					<div class="col-4 col-6-medium col-12-small">
-						<article class="box style1">
-							<a href="#" class="image featured"><img src="images/photo11.png" alt="" /></a>
-							<h3>Introduction to Cybersecurity</h3>
-							<p>Code Academy</p>
-							<p>ID: 1CC37568-D</p>
-						</article>
-					</div>
-					
-					<div class="col-4 col-6-medium col-12-small">
-						<article class="box style1">
-							<a href="#" class="image featured"><img src="images/photo12.png" alt="" /></a>
-							<h3>Learn SQL Course </h3>
-							<p>Code Academy</p>
-							<p>ID: BF28DDD3-A</p>
-						</article>
-					</div>
-					</div>
-					
-	
-				</div>
-				
-			</div>
-		</article>
-	
+    <div class="container">
+        <header>
+            <h2 style="background: linear-gradient(135deg, #e8293a, #7c3aed, #3b5bdb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-family: 'Syne', sans-serif; font-weight: 700;">Certifications</h2>
+            <p style="font-size: 0.9em;">Continuous learning and skill development through recognized industry certifications.</p>
+        </header>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div class="cert-card-top">
+                    <div class="cert-icon">🏅</div>
+                    <div class="cert-info">
+                        <h3>Intro to Web Development</h3>
+                        <p class="cert-issuer">CodePath</p>
+                    </div>
+                </div>
+                <hr class="cert-divider">
+                <div class="cert-card-bottom">
+                    <span class="cert-id">ID: 143471</span>
+                    <a href="images/webDevelopment.pdf" target="_blank" class="cert-view">View ↗</a>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-card-top">
+                    <div class="cert-icon">🏅</div>
+                    <div class="cert-info">
+                        <h3>Intro to Software Engineering</h3>
+                        <p class="cert-issuer">CodePath</p>
+                    </div>
+                </div>
+                <hr class="cert-divider">
+                <div class="cert-card-bottom">
+                    <span class="cert-id">ID: 165811</span>
+                    <a href="images/Software.pdf" target="_blank" class="cert-view">View ↗</a>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-card-top">
+                    <div class="cert-icon">🏅</div>
+                    <div class="cert-info">
+                        <h3>Introduction to Cybersecurity</h3>
+                        <p class="cert-issuer">Codecademy</p>
+                    </div>
+                </div>
+                <hr class="cert-divider">
+                <div class="cert-card-bottom">
+                    <span class="cert-id">ID: 1CC37568-D</span>
+                    <a href="images/CyberS.pdf" target="_blank" class="cert-view">View ↗</a>
+                </div>
+            </div>
+            <div class="cert-card">
+                <div class="cert-card-top">
+                    <div class="cert-icon">🏅</div>
+                    <div class="cert-info">
+                        <h3>Learn SQL Course</h3>
+                        <p class="cert-issuer">Codecademy</p>
+                    </div>
+                </div>
+                <hr class="cert-divider">
+                <div class="cert-card-bottom">
+                    <span class="cert-id">ID: BF28DDD3-A</span>
+                    <a href="images/SQL.pdf" target="_blank" class="cert-view">View ↗</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
 
 
 <!-- Gallery -->
