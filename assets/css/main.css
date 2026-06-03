@@ -2033,20 +2033,19 @@ input, select, textarea {
 }
 
 		.wrapper.style2 {
-			background-color: #edeef2;
-			text-shadow: 1px 1px 0px #fff;
-		}
+    background-color: #ffffff;
+    text-shadow: none;
+}
 
-		.wrapper.style3 {
-			background-color: #ffffff;
-			text-shadow: 1px 1px 0px #fff;
-		}
+.wrapper.style3 {
+    background-color: #ffffff;
+    text-shadow: none;
+}
 
-		.wrapper.style4 {
-			background-color: #edeef2;
-			color: #999;
-			text-shadow: -1px -1px 0px #474646;
-		}
+.wrapper.style4 {
+    background-color: #ffffff;
+    text-shadow: none;
+}
 
 			.wrapper.style4 h1, .wrapper.style4 h2, .wrapper.style4 h3, .wrapper.style4 h4, .wrapper.style4 h5, .wrapper.style4 h6 {
 				color: #fff;
@@ -2070,17 +2069,17 @@ input, select, textarea {
 /* Nav */
 
 	#nav {
-		background-color: #333333;;
-		text-align: center;
-		position: fixed;
-		left: 0;
-		top: 0;
-		width: 100%;
-		z-index: 10000;
-		cursor: default;
-		height: 3.5em;
-		line-height: 3.5em;
-	}
+    background-color: #ffffff;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    cursor: default;
+    height: 3.5em;
+    line-height: 3.5em;
+}
 
 		#nav ul {
 			margin-bottom: 0;
@@ -2094,26 +2093,24 @@ input, select, textarea {
 		}
 
 		#nav a {
-			-moz-transition: background-color .2s ease-in-out;
-			-webkit-transition: background-color .2s ease-in-out;
-			-ms-transition: background-color .2s ease-in-out;
-			transition: background-color .2s ease-in-out;
-			position: relative;
-			display: block;
-			color: #7c3aed;
-			text-decoration: none;
-			outline: 0;
-			font-weight: 600;
-			border-radius: 8px;
-			color: #16b8ce;
-			height: 2.5em;
-			line-height: 2.5em;
-			padding: 0 1.25em;
-		}
+    -moz-transition: background-color .2s ease-in-out;
+    -webkit-transition: background-color .2s ease-in-out;
+    -ms-transition: background-color .2s ease-in-out;
+    transition: background-color .2s ease-in-out;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    outline: 0;
+    font-weight: 600;
+    border-radius: 8px;
+    color: #333333;
+    height: 2.5em;
+    line-height: 2.5em;
+    padding: 0 1.25em;
+}
 
 			#nav a:hover {
-				color: #7c3aed; !important;
-				background: transparent;
+    		color: #7c3aed !important;
 			}
 
 			#nav a.active {
