@@ -150,9 +150,10 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #050310;
-		margin: 0 0 0.75em 0;
-	}
+    color: #050310;
+    margin: 0 0 0.75em 0;
+    font-family: 'Syne', sans-serif;
+}
 
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 		text-decoration: none;
