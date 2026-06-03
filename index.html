@@ -329,95 +329,73 @@ ul.social li a:hover:before {
 .cert-view:hover {
     color: #7c3aed !important;
 }
-.slideshow-container {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    border-radius: 16px;
+.gallery-slider {
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(124,58,237,0.15);
-}
-.slide {
-    display: none;
     position: relative;
 }
-.slide.active {
-    display: block;
+.gallery-track {
+    display: flex;
+    gap: 24px;
+    transition: transform 0.5s ease;
 }
-.slide img {
+.gallery-card {
+    min-width: calc(33.333% - 16px);
+    background: #fff;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    flex-shrink: 0;
+}
+.gallery-card:hover {
+    border-color: #7c3aed;
+    box-shadow: 0 0 15px 5px rgba(124,58,237,0.2);
+}
+.gallery-card img {
     width: 100%;
-    height: 480px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 16px;
 }
-.slide-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.75));
-    color: #fff;
-    padding: 40px 24px 24px;
-    border-radius: 0 0 16px 16px;
+.gallery-card-body {
+    padding: 16px;
+    text-align: left;
 }
-.slide-caption h3 {
+.gallery-card-body h3 {
     font-family: 'Syne', sans-serif;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 700;
-    color: #fff;
-    margin-bottom: 4px;
+    color: #050310;
+    margin-bottom: 6px;
 }
-.slide-caption p {
-    font-size: 0.85em;
-    color: rgba(255,255,255,0.85);
+.gallery-card-body p {
+    font-size: 0.82em;
+    color: #666;
+    line-height: 1.5;
     margin-bottom: 0;
 }
-.slide-dots {
+.gallery-dots {
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin-top: 20px;
+    margin-top: 24px;
 }
-.slide-dot {
+.gallery-dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background: #ddd;
     cursor: pointer;
-    transition: background 0.3s ease;
     border: none;
     padding: 0;
+    transition: background 0.3s ease;
 }
-.slide-dot.active {
+.gallery-dot.active {
     background: #7c3aed;
     transform: scale(1.2);
 }
-.slide-dot:hover {
+.gallery-dot:hover {
     background: #e8293a;
-}
-.slide-prev, .slide-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.9);
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    font-size: 1.1em;
-    color: #7c3aed;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s;
-}
-.slide-prev { left: 16px; }
-.slide-next { right: 16px; }
-.slide-prev:hover, .slide-next:hover {
-    background: #7c3aed;
-    color: #fff;
 }
 		
 }		
@@ -738,67 +716,67 @@ I constantly improve my skills by building projects,
             <h2 style="background: linear-gradient(135deg, #e8293a, #7c3aed, #3b5bdb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-family: 'Syne', sans-serif; font-weight: 700;">Gallery</h2>
             <p style="font-size: 0.9em;">A glimpse into my journey — leadership, community, and unforgettable moments.</p>
         </header>
-        <div class="slideshow-container">
-            <button class="slide-prev" onclick="changeSlide(-1)">&#8592;</button>
-            <button class="slide-next" onclick="changeSlide(1)">&#8594;</button>
-            <div class="slide active">
-                <img src="images/16.png" alt="Organization Fair" />
-                <div class="slide-caption">
-                    <h3>Organization Fair</h3>
-                    <p>Society of Hispanic Professional Engineers first attendance since 2020.</p>
+        <div class="gallery-slider">
+            <div class="gallery-track" id="gallery-track">
+                <div class="gallery-card">
+                    <img src="images/16.png" alt="Organization Fair" />
+                    <div class="gallery-card-body">
+                        <h3>Organization Fair</h3>
+                        <p>Society of Hispanic Professional Engineers first attendance since 2020.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="slide">
-                <img src="images/17.png" alt="Lobby Days" />
-                <div class="slide-caption">
-                    <h3>Lobby Days</h3>
-                    <p>Our chapter had the opportunity to inform our COE classmates about the reinstatement of SHPE at NCAT.</p>
+                <div class="gallery-card">
+                    <img src="images/17.png" alt="Lobby Days" />
+                    <div class="gallery-card-body">
+                        <h3>Lobby Days</h3>
+                        <p>Our chapter informed COE classmates about the reinstatement of SHPE at NCAT.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="slide">
-                <img src="images/18.png" alt="SHPE Region 7 Retreat" />
-                <div class="slide-caption">
-                    <h3>SHPE Region 7 Retreat</h3>
-                    <p>Our bi-annual SHPE retreat, hosted by UNC Charlotte.</p>
+                <div class="gallery-card">
+                    <img src="images/18.png" alt="SHPE Region 7 Retreat" />
+                    <div class="gallery-card-body">
+                        <h3>SHPE Region 7 Retreat</h3>
+                        <p>Our bi-annual SHPE retreat, hosted by UNC Charlotte.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="slide">
-                <img src="images/19.png" alt="Fiesta Latina" />
-                <div class="slide-caption">
-                    <h3>Fiesta Latina at NCAT</h3>
-                    <p>As president of SHPE at NCAT, I had the honor of hosting our Fiesta Latina to celebrate Hispanic Heritage.</p>
+                <div class="gallery-card">
+                    <img src="images/19.png" alt="Fiesta Latina" />
+                    <div class="gallery-card-body">
+                        <h3>Fiesta Latina at NCAT</h3>
+                        <p>As president of SHPE at NCAT, I hosted our Fiesta Latina to celebrate Hispanic Heritage.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="slide">
-                <img src="images/20.png" alt="Collaborations" />
-                <div class="slide-caption">
-                    <h3>Collaborations</h3>
-                    <p>SHPE at NCAT was invited to join the NCSU SHPE chapter at a mixer.</p>
+                <div class="gallery-card">
+                    <img src="images/20.png" alt="Collaborations" />
+                    <div class="gallery-card-body">
+                        <h3>Collaborations</h3>
+                        <p>SHPE at NCAT was invited to join the NCSU SHPE chapter at a mixer.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="slide">
-                <img src="images/21.png" alt="National Convention" />
-                <div class="slide-caption">
-                    <h3>National Convention</h3>
-                    <p>Successfully led 6 members of my e-board to the SHPE National Convention in Anaheim, California.</p>
+                <div class="gallery-card">
+                    <img src="images/21.png" alt="National Convention" />
+                    <div class="gallery-card-body">
+                        <h3>National Convention</h3>
+                        <p>Successfully led 6 members of my e-board to the SHPE National Convention in Anaheim, California.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="slide">
-                <img src="images/22.png" alt="Oath Ceremony" />
-                <div class="slide-caption">
-                    <h3>Oath Ceremony</h3>
-                    <p>Officially took the obligation of an engineer oath.</p>
+                <div class="gallery-card">
+                    <img src="images/22.png" alt="Oath Ceremony" />
+                    <div class="gallery-card-body">
+                        <h3>Oath Ceremony</h3>
+                        <p>Officially took the obligation of an engineer oath.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="slide">
-                <img src="images/23.png" alt="SHPE Connections" />
-                <div class="slide-caption">
-                    <h3>SHPE Connections</h3>
-                    <p>Connected with the SHPE Western Carolina University chapter in California.</p>
+                <div class="gallery-card">
+                    <img src="images/23.png" alt="SHPE Connections" />
+                    <div class="gallery-card-body">
+                        <h3>SHPE Connections</h3>
+                        <p>Connected with the SHPE Western Carolina University chapter in California.</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="slide-dots" id="slide-dots"></div>
+        <div class="gallery-dots" id="gallery-dots"></div>
     </div>
 </article>
 	<!-- Contact-->
@@ -843,31 +821,32 @@ I constantly improve my skills by building projects,
   type();
 </script>
 <script>
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    const dotsContainer = document.getElementById('slide-dots');
+    const track = document.getElementById('gallery-track');
+    const cards = track.querySelectorAll('.gallery-card');
+    const dotsContainer = document.getElementById('gallery-dots');
+    const totalSlides = Math.ceil(cards.length / 3);
+    let currentGallerySlide = 0;
 
-    slides.forEach((_, i) => {
+    for (let i = 0; i < totalSlides; i++) {
         const dot = document.createElement('button');
-        dot.classList.add('slide-dot');
+        dot.classList.add('gallery-dot');
         if (i === 0) dot.classList.add('active');
-        dot.onclick = () => goToSlide(i);
+        dot.onclick = () => goToGallerySlide(i);
         dotsContainer.appendChild(dot);
-    });
-
-    function goToSlide(n) {
-        slides[currentSlide].classList.remove('active');
-        document.querySelectorAll('.slide-dot')[currentSlide].classList.remove('active');
-        currentSlide = (n + slides.length) % slides.length;
-        slides[currentSlide].classList.add('active');
-        document.querySelectorAll('.slide-dot')[currentSlide].classList.add('active');
     }
 
-    function changeSlide(direction) {
-        goToSlide(currentSlide + direction);
+    function goToGallerySlide(n) {
+        currentGallerySlide = n;
+        const cardWidth = cards[0].offsetWidth + 24;
+        track.style.transform = `translateX(-${n * 3 * cardWidth}px)`;
+        document.querySelectorAll('.gallery-dot').forEach((d, i) => {
+            d.classList.toggle('active', i === n);
+        });
     }
 
-    setInterval(() => changeSlide(1), 4000);
+    setInterval(() => {
+        goToGallerySlide((currentGallerySlide + 1) % totalSlides);
+    }, 4000);
 </script>
 	</body>
 </html>
