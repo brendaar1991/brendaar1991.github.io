@@ -195,6 +195,62 @@ ul.social li a:hover:before {
     font-weight: 500;
     color: #333;
 }
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    text-align: left;
+}
+.project-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease;
+}
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(124,58,237,0.12);
+}
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.project-card-body {
+    padding: 20px;
+}
+.project-card-body h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #050310;
+    margin-bottom: 10px;
+}
+.project-card-body p {
+    font-size: 0.88em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+.project-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+.project-tech-tags span {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: 500;
+    background: #f0eeff;
+    color: #7c3aed;
+    border: 1px solid #e0d9ff;
+}		
 }		
 </style>
 </head>
@@ -358,78 +414,76 @@ I constantly improve my skills by building projects,
 </article>
 
 		<!-- projects -->
-			<article id="projects" class="wrapper style3">
-				<div class="container">
-					<header>
-						<h2>Here’s some projects I worked on recently.</h2>
-						<p></p>
-					</header>
-					<div class="row">
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/photo03.png" alt="" /></a>
-								<h3><a href="#">COVID-19 AI Image Generator</a></h3>
-								<p>The COVID-19 Image Generation project 
-									develops a Convolutional Neural Network (CNN) to analyze 
-									medical scans and determine COVID or non-COVID status. 
-									The model is trained with labeled datasets for classification. 
-									A Generative Adversarial Network (GAN) generates synthetic 
-									COVID and non-COVID images to augment the dataset, improving 
-									model accuracy. The project uses Python, PyTorch, Gradio,
-									 Django, Jupyter Notebook, and GitHub.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/photo04.png" alt="" /></a>
-								<h3><a href="#">AIVi Research Group: Vitual Reality</a></h3>
-								<p>The research project focuses on creating a Virtual Reality (VR)
-									 experience for the Agriculture Department, built using 
-									 Unity and Blender. Its purpose is to provide an educational tool 
-									 for farmers and students, allowing them to learn agricultural
-									  concepts in an interactive virtual environment.
-									   The VR experience enhances learning 
-									   offering an immersive 
-									   and practical approach to education in the field of agriculture.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/photo05.png" alt="" /></a>
-								<h3><a href="#">Bivariate MLE Dash Appliaction</a></h3>
-								<p>The Bivariate MLE Dash Application is a web-based 
-									tool that allows users to perform Maximum Likelihood Estimation (MLE)
-									 analysis on bivariate data. It provides an interactive 
-									 interface where users can input data, estimate model parameters,
-									  and visualize the results. The app integrates data processing,
-									   MLE calculations, and real-time visualizations, making it easy
-									    for users to analyze and interpret statistical data.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/photo06.png" alt="" /></a>
-								<h3><a href="#">Lexical Analyzer </a></h3>
-								<p>This project is a lexical and syntax analyzer 
-									that reads source code, breaks it into tokens, 
-									and checks if it follows a specified BNF grammar. 
-									It identifies elements like keywords and operators, 
-									then validates the syntax, printing errors if any are found.</p>
-							</article>
-						</div>
-						<div class="col-4 col-6-medium col-12-small">
-							<article class="box style2">
-								<a href="#" class="image featured"><img src="images/photo07.png" alt="" /></a>
-								<h3><a href="#">Payment System Application</a></h3>
-								<p>
-									This Java program simulates a payment system 
-									for employees, including different types of 
-									staff: Lecturers, Assistant Professors, and Professors.
-									 The program allows users to input employee information, 
-									 such as personal details and salary, and calculates their 
-									 payments based on the type of employee. It also handles special cases, 
-									 such as bonuses for professors and summer payments for assistant professors.</p>
-							</article>
+<article id="projects" class="wrapper style3">
+    <div class="container">
+        <header>
+            <h2 style="background: linear-gradient(135deg, #e8293a, #7c3aed, #3b5bdb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-family: 'Syne', sans-serif; font-weight: 700;">Projects</h2>
+            <p style="font-size: 0.9em;">A collection of projects built through research, coursework, and personal exploration.</p>
+        </header>
+        <div class="projects-grid">
+            <div class="project-card">
+    <img src="images/photo03.png" alt="COVID-19 AI Image Generator" />
+    <div class="project-card-body">
+        <h3>COVID-19 AI Image Generator</h3>
+        <p>The COVID-19 Image Generation project develops a Convolutional Neural Network (CNN) to analyze medical scans and determine COVID or non-COVID status. The model is trained with labeled datasets for classification. A Generative Adversarial Network (GAN) generates synthetic COVID and non-COVID images to augment the dataset, improving model accuracy. The project uses Python, PyTorch, Gradio, Django, Jupyter Notebook, and GitHub.</p>
+        <div class="project-tech-tags">
+            <span>Python</span><span>PyTorch</span><span>Django</span><span>Gradio</span>
+        </div>
+    </div>
+</div>
+<div class="project-card">
+    <img src="images/photo04.png" alt="AIVi VR" />
+    <div class="project-card-body">
+        <h3>AIVi Research Group: Virtual Reality</h3>
+        <p>The research project focuses on creating a Virtual Reality (VR) experience for the Agriculture Department, built using Unity and Blender. Its purpose is to provide an educational tool for farmers and students, allowing them to learn agricultural concepts in an interactive virtual environment. The VR experience enhances learning by offering an immersive and practical approach to education in the field of agriculture.</p>
+        <div class="project-tech-tags">
+            <span>Unity</span><span>Blender</span><span>VR</span>
+        </div>
+    </div>
+</div>
+<div class="project-card">
+    <img src="images/photo05.png" alt="Bivariate MLE" />
+    <div class="project-card-body">
+        <h3>Bivariate MLE Dash Application</h3>
+        <p>The Bivariate MLE Dash Application is a web-based tool that allows users to perform Maximum Likelihood Estimation (MLE) analysis on bivariate data. It provides an interactive interface where users can input data, estimate model parameters, and visualize the results. The app integrates data processing, MLE calculations, and real-time visualizations, making it easy for users to analyze and interpret statistical data.</p>
+        <div class="project-tech-tags">
+            <span>Python</span><span>Dash</span><span>Statistics</span>
+        </div>
+    </div>
+</div>
+<div class="project-card">
+    <img src="images/photo06.png" alt="Lexical Analyzer" />
+    <div class="project-card-body">
+        <h3>Lexical Analyzer</h3>
+        <p>This project is a lexical and syntax analyzer that reads source code, breaks it into tokens, and checks if it follows a specified BNF grammar. It identifies elements like keywords and operators, then validates the syntax, printing errors if any are found.</p>
+        <div class="project-tech-tags">
+            <span>Python</span><span>Compilers</span><span>BNF</span>
+        </div>
+    </div>
+</div>
+<div class="project-card">
+    <img src="images/photo07.png" alt="Payment System" />
+    <div class="project-card-body">
+        <h3>Payment System Application</h3>
+        <p>This Java program simulates a payment system for employees, including different types of staff: Lecturers, Assistant Professors, and Professors. The program allows users to input employee information, such as personal details and salary, and calculates their payments based on the type of employee. It also handles special cases, such as bonuses for professors and summer payments for assistant professors.</p>
+        <div class="project-tech-tags">
+            <span>Java</span><span>OOP</span>
+        </div>
+    </div>
+</div>
+<div class="project-card">
+    <img src="images/photo08.png" alt="Airline Reservation" />
+    <div class="project-card-body">
+        <h3>Airline Reservation System</h3>
+        <p>A ticket system for four airplanes, allowing customers to purchase and return tickets. It handles the airplane details, including flight times and available seats. If tickets are unavailable, it throws an exception. Customers can choose to buy or return tickets, with seat numbers being managed accordingly. The system tracks sold and returned tickets, ensuring accurate seat availability.</p>
+        <div class="project-tech-tags">
+            <span>Java</span><span>OOP</span><span>Exception Handling</span>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+</article>
 						</div>
 						<div class="col-4 col-6-medium col-12-small">
 							<article class="box style2">
