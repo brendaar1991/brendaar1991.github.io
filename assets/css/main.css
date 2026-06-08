@@ -117,7 +117,7 @@ input, select, textarea {
 	body, input, textarea, select {
 		font-family: 'DM Sans', sans-serif;
 		line-height: 1.85em;
-		color: #888;
+		color: #cccccc;
 		font-weight: 300;
 		font-size: 13pt;
 	}
@@ -141,7 +141,7 @@ input, select, textarea {
 
 	b, strong {
 		font-weight: 600;
-		color: #130330;
+		color: #ffffff;
 	}
 
 	i, em {
@@ -167,7 +167,7 @@ input, select, textarea {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-    color: #050310;
+    color: #ffffff;
     margin: 0 0 0.75em 0;
     font-family: 'Syne', sans-serif;
 }
@@ -1961,11 +1961,12 @@ input, select, textarea {
 /* Box */
 
 	.box {
-		background: #fff;
-		box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.15), 0px 2px 3px 0px rgba(0, 0, 0, 0.1);
-		text-align: center;
-		padding: 2em;
-	}
+    background: #1a1a2e;
+    box-shadow: none;
+    text-align: center;
+    padding: 2em;
+    border: 1px solid rgba(255,255,255,0.1);
+}
 
 		.box.style1 {
 			padding: 3em 2em 3.5em 2em;
