@@ -110,10 +110,15 @@ ul.social li a:hover:before {
     padding: 20px 24px;
     max-width: 430px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 2px solid transparent;
     position: relative;
 	text-align: left;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
+.timeline-card:hover {
+    border-color: #e8293a;
+    box-shadow: 0 0 15px 5px rgba(232,41,58,0.2);
+}		
 .timeline-arrow {
     position: absolute;
     top: 20px;
@@ -154,7 +159,7 @@ ul.social li a:hover:before {
     font-size: 0.85em;
     line-height: 1.6;
 }
-		.skills-grid {
+.skills-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
@@ -165,7 +170,12 @@ ul.social li a:hover:before {
     border-radius: 12px;
     padding: 24px 24px 32px 24px;
     box-shadow: none;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 2px solid transparent;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.skill-category:hover {
+    border-color: #3b5bdb;
+    box-shadow: 0 0 15px 5px rgba(59,91,219,0.2);
 }
 .skill-category h3 {
     font-family: 'Syne', sans-serif;
