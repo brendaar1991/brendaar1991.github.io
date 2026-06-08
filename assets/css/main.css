@@ -86,21 +86,32 @@ input, select, textarea {
     padding-top: 3.5em;
     background-color: #0d0d1a;
     background-image: 
-        radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.6) 0%, transparent 100%),
-        radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,0.4) 0%, transparent 100%),
-        radial-gradient(1px 1px at 40% 10%, rgba(255,255,255,0.5) 0%, transparent 100%),
-        radial-gradient(1px 1px at 55% 60%, rgba(255,255,255,0.3) 0%, transparent 100%),
-        radial-gradient(1px 1px at 70% 25%, rgba(255,255,255,0.6) 0%, transparent 100%),
-        radial-gradient(1px 1px at 80% 75%, rgba(255,255,255,0.4) 0%, transparent 100%),
-        radial-gradient(1px 1px at 90% 45%, rgba(255,255,255,0.5) 0%, transparent 100%),
-        radial-gradient(1px 1px at 15% 70%, rgba(255,255,255,0.3) 0%, transparent 100%),
-        radial-gradient(1px 1px at 35% 85%, rgba(255,255,255,0.4) 0%, transparent 100%),
-        radial-gradient(1px 1px at 60% 90%, rgba(255,255,255,0.5) 0%, transparent 100%),
-        radial-gradient(1px 1px at 75% 5%, rgba(255,255,255,0.3) 0%, transparent 100%),
-        radial-gradient(1px 1px at 95% 20%, rgba(255,255,255,0.6) 0%, transparent 100%),
-        radial-gradient(2px 2px at 20% 55%, rgba(255,255,255,0.2) 0%, transparent 100%),
-        radial-gradient(2px 2px at 50% 30%, rgba(255,255,255,0.15) 0%, transparent 100%),
-        radial-gradient(2px 2px at 85% 60%, rgba(255,255,255,0.2) 0%, transparent 100%);
+        radial-gradient(1px 1px at 5% 10%, rgba(255,255,255,0.7) 0%, transparent 100%),
+        radial-gradient(1px 1px at 10% 25%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 15% 5%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 20% 40%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 25% 15%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 30% 60%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 35% 30%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 40% 75%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 45% 20%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 50% 50%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 55% 85%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 35%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 65% 65%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 70% 10%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 75% 45%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 80% 80%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 85% 20%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 55%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 95% 35%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 100% 70%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(2px 2px at 12% 88%, rgba(255,255,255,0.2) 0%, transparent 100%),
+        radial-gradient(2px 2px at 28% 72%, rgba(255,255,255,0.15) 0%, transparent 100%),
+        radial-gradient(2px 2px at 44% 92%, rgba(255,255,255,0.2) 0%, transparent 100%),
+        radial-gradient(2px 2px at 62% 8%, rgba(255,255,255,0.15) 0%, transparent 100%),
+        radial-gradient(2px 2px at 78% 95%, rgba(255,255,255,0.2) 0%, transparent 100%),
+        radial-gradient(2px 2px at 92% 48%, rgba(255,255,255,0.15) 0%, transparent 100%);
 }
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
