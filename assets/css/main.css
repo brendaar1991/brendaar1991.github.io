@@ -83,9 +83,25 @@ input, select, textarea {
 	}
 
 	body {
-		padding-top: 3.5em;
-		background-color: #f8f8f8;
-	}
+    padding-top: 3.5em;
+    background-color: #0d0d1a;
+    background-image: 
+        radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 40% 10%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 55% 60%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 70% 25%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 80% 75%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 45%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 15% 70%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 35% 85%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 90%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 75% 5%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 95% 20%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(2px 2px at 20% 55%, rgba(255,255,255,0.2) 0%, transparent 100%),
+        radial-gradient(2px 2px at 50% 30%, rgba(255,255,255,0.15) 0%, transparent 100%),
+        radial-gradient(2px 2px at 85% 60%, rgba(255,255,255,0.2) 0%, transparent 100%);
+}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
@@ -2025,29 +2041,27 @@ input, select, textarea {
     box-shadow: none;
     padding: 8em 0 8em 0;
     text-align: center;
+    background-color: transparent;
 }
-
-		.wrapper.style1 {
+.wrapper.style1 {
     background-image: none;
-    background-color: #ffffff;
+    background-color: transparent;
     text-align: left;
 }
-
-	.wrapper.style2 {
-    background-color: #ffffff;
+.wrapper.style2 {
+    background-color: transparent;
     text-shadow: none;
+    text-align: left;
 }
-
 .wrapper.style3 {
-    background-color: #ffffff;
+    background-color: transparent;
     text-shadow: none;
+    text-align: left;
 }
-
 .wrapper.style4 {
-    background-color: #ffffff;
+    background-color: transparent;
     text-shadow: none;
 }
-
 			.wrapper.style4 h1, .wrapper.style4 h2, .wrapper.style4 h3, .wrapper.style4 h4, .wrapper.style4 h5, .wrapper.style4 h6 {
 				color: #fff;
 			}
