@@ -456,6 +456,113 @@ ul.social li a:hover:before {
 }
 .contact-item-text a:hover {
     color: #7c3aed !important;
+}	
+.chat-widget {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+    overflow: hidden;
+}
+.chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.chat-messages::-webkit-scrollbar {
+    width: 4px;
+}
+.chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+.chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.2);
+    border-radius: 2px;
+}
+.chat-bubble {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.88em;
+    line-height: 1.6;
+    color: #ffffff;
+}
+.chat-bubble.bot {
+    background: rgba(124,58,237,0.3);
+    border: 1px solid rgba(124,58,237,0.4);
+    align-self: flex-start;
+}
+.chat-bubble.user {
+    background: rgba(59,91,219,0.3);
+    border: 1px solid rgba(59,91,219,0.4);
+    align-self: flex-end;
+}
+.chat-quick-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 24px 16px;
+}
+.chat-quick-btn {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.05);
+    color: #cccccc;
+    font-size: 0.82em;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+}
+.chat-quick-btn:hover {
+    background: rgba(124,58,237,0.3);
+    border-color: #7c3aed;
+    color: #ffffff;
+}
+.chat-input-row {
+    display: flex;
+    gap: 10px;
+    padding: 16px 24px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+.chat-input {
+    flex: 1;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 25px;
+    padding: 10px 18px;
+    color: #ffffff;
+    font-size: 0.88em;
+    font-family: 'DM Sans', sans-serif;
+    outline: none;
+}
+.chat-input::placeholder {
+    color: rgba(255,255,255,0.3);
+}
+.chat-input:focus {
+    border-color: #7c3aed;
+}
+.chat-send-btn {
+    background: linear-gradient(135deg, #7c3aed, #3b5bdb);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+}
+.chat-send-btn:hover {
+    opacity: 0.85;
 }		
 		
 }		
@@ -492,6 +599,28 @@ ul.social li a:hover:before {
                     <h2 class="gradient-name">Brenda <br>Arellano Romero</h2>
 <p style="height: 1.6em; margin-top: 0; margin-bottom: 0.5em; overflow: visible;"><span id="typed-role" class="typed-role"></span><span class="typed-cursor">|</span></p>
 </header>
+<header>
+    <p style="font-size:1.7em; color:#ffffff; margin-bottom:0.2em; font-weight:600;">Hi, I am</p>
+    <h2 class="gradient-name">Brenda <br>Arellano Romero</h2>
+    <p style="height: 1.6em; margin-top: 0; margin-bottom: 0.5em; overflow: visible;"><span id="typed-role" class="typed-role"></span><span class="typed-cursor">|</span></p>
+</header>
+
+<div class="chat-widget">
+    <div class="chat-messages" id="chat-messages">
+        <div class="chat-bubble bot">Hi! I'm Brenda's portfolio assistant 👋 Ask me anything about her experience, skills, or projects!</div>
+    </div>
+    <div class="chat-quick-btns">
+        <button class="chat-quick-btn" onclick="sendQuick('Tell me about Brenda')">Tell me about Brenda</button>
+        <button class="chat-quick-btn" onclick="sendQuick('Skills')">Skills</button>
+        <button class="chat-quick-btn" onclick="sendQuick('Projects')">Projects</button>
+        <button class="chat-quick-btn" onclick="sendQuick('Education')">Education</button>
+        <button class="chat-quick-btn" onclick="sendQuick('Contact')">Contact</button>
+    </div>
+    <div class="chat-input-row">
+        <input class="chat-input" id="chat-input" type="text" placeholder="Ask me anything about Brenda..." onkeydown="if(event.key==='Enter') sendChat()" />
+        <button class="chat-send-btn" onclick="sendChat()">➤</button>
+    </div>
+</div>				
                 <pstyle="margin-top: 0.5em;"><strong>I’m a Computer Science graduate from North Carolina A&T State University and an emerging data scientist 
 					passionate about transforming data into actionable insights and building impactful,
 					user-friendly solutions.
@@ -1083,5 +1212,69 @@ I constantly improve my skills by building projects,
     galleryTrack.style.cursor = 'grab';
     animationId = requestAnimationFrame(animateGallery);
 </script>
+<script>
+const responses = {
+    about: {
+        keywords: ['about', 'who', 'brenda', 'yourself', 'tell me', 'bio', 'background'],
+        answer: "Hi! I'm Brenda Arellano Romero 👩‍💻 — a Data Analyst and Computer Science graduate from North Carolina A&T State University, currently pursuing my Master's degree in CS. I'm passionate about transforming data into actionable insights and building impactful solutions. I have hands-on experience in data analytics, machine learning, software engineering, and VR development. I'm bilingual and based in Greensboro, NC!"
+    },
+    skills: {
+        keywords: ['skill', 'tech', 'stack', 'tools', 'language', 'know', 'use', 'experience', 'expertise', 'proficient'],
+        answer: "Brenda has a diverse skill set! 🛠️\n\n• Languages: Python, Java, C++, R, SQL, HTML, CSS, JavaScript\n• Data & Analytics: Tableau, Databricks, Snowflake, Power BI, Machine Learning, LLM/AI\n• Tools: GitHub, Figma, Workday, Unity, Blender, SolidWorks\n• Other: Web Development, Project Management, Accounting, Virtual Reality\n\nShe currently works as a Data Analyst using these skills in the real world every day!"
+    },
+    projects: {
+        keywords: ['project', 'work', 'built', 'created', 'developed', 'portfolio', 'application', 'app'],
+        answer: "Brenda has worked on some exciting projects! 🚀\n\n• COVID-19 AI Image Generator — CNN + GAN system using PyTorch and Django\n• AIVi VR Research — immersive VR education tool built in Unity and Blender\n• Bivariate MLE Dash App — statistical web tool with real-time visualizations\n• Lexical Analyzer — syntax analyzer using BNF grammar\n• Payment System — Java-based employee payroll simulation\n• Airline Reservation System — ticket management system in Java\n\nAsk me about any specific project for more details!"
+    },
+    education: {
+        keywords: ['education', 'school', 'degree', 'university', 'college', 'study', 'graduate', 'major', 'ncat', 'gtcc'],
+        answer: "Brenda's educational journey! 🎓\n\n• Master of Science in Computer Science — NC A&T State University (In Progress)\n• Bachelor of Science in Computer Science — NC A&T State University\n• Associates in Computer Engineering — Guilford Technical Community College\n\nShe is also a member of Upsilon Pi Epsilon Honorary Society and served as President of SHPE at NC A&T!"
+    },
+    contact: {
+        keywords: ['contact', 'reach', 'email', 'hire', 'connect', 'linkedin', 'github', 'touch', 'message'],
+        answer: "Want to connect with Brenda? 📬\n\n• Email: barellanor91@gmail.com\n• LinkedIn: linkedin.com/in/brenda-arellano-romero\n• GitHub: github.com/brendaar1991\n• Location: Greensboro, NC\n\nShe is currently open to new opportunities — feel free to reach out!"
+    },
+    opportunities: {
+        keywords: ['open', 'opportunity', 'hire', 'job', 'available', 'looking', 'work', 'position', 'role', 'candidate'],
+        answer: "Yes! Brenda is actively open to new opportunities! 🌟 She is targeting mid-level data roles such as Data Engineer, BI Analyst, or People Analytics Analyst — ideally remote and paying over $100k. She has a strong interest in HR Tech companies and is experienced with Azure Databricks. Feel free to reach out at barellanor91@gmail.com!"
+    }
+};
+
+const fallback = "I'm just Brenda's portfolio assistant, so I can only answer questions about her experience, skills, projects, and education. Try asking about her skills, projects, or how to contact her! 😊";
+
+function getResponse(input) {
+    const lower = input.toLowerCase();
+    for (const key in responses) {
+        if (responses[key].keywords.some(kw => lower.includes(kw))) {
+            return responses[key].answer;
+        }
+    }
+    return fallback;
+}
+
+function addMessage(text, type) {
+    const messages = document.getElementById('chat-messages');
+    const bubble = document.createElement('div');
+    bubble.classList.add('chat-bubble', type);
+    bubble.style.whiteSpace = 'pre-line';
+    bubble.textContent = text;
+    messages.appendChild(bubble);
+    messages.scrollTop = messages.scrollHeight;
+}
+
+function sendChat() {
+    const input = document.getElementById('chat-input');
+    const text = input.value.trim();
+    if (!text) return;
+    addMessage(text, 'user');
+    input.value = '';
+    setTimeout(() => addMessage(getResponse(text), 'bot'), 500);
+}
+
+function sendQuick(text) {
+    addMessage(text, 'user');
+    setTimeout(() => addMessage(getResponse(text), 'bot'), 500);
+}
+</script>		
 	</body>
 </html>
