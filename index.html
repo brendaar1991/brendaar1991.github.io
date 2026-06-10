@@ -570,9 +570,11 @@ ul.social li a:hover:before {
 }
 .thinking-dots {
     display: flex;
+    flex-direction: row;
     gap: 4px;
     align-items: center;
     padding: 4px 0;
+    flex-wrap: nowrap;
 }
 .thinking-dots span {
     width: 7px;
@@ -581,13 +583,14 @@ ul.social li a:hover:before {
     background: #7c3aed;
     animation: thinkingBounce 1.2s infinite;
     display: inline-block;
+    flex-shrink: 0;
 }
 .thinking-dots span:nth-child(2) { animation-delay: 0.2s; }
 .thinking-dots span:nth-child(3) { animation-delay: 0.4s; }
 @keyframes thinkingBounce {
     0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
     40% { transform: translateY(-6px); opacity: 1; }
-}		
+}
 		
 }		
 </style>
@@ -614,7 +617,7 @@ ul.social li a:hover:before {
 </nav>
 <article id="aboutme" class="wrapper style1">
     <div class="container">
-        <!-- HERO - first thing they see -->
+        <!--  first thing they see -->
         <div style="min-height: 85vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
             <p style="font-size:1.3em; color:#ffffff; margin-bottom:0.2em; font-weight:600;">Hi, I am</p>
             <h2 class="gradient-name">Brenda <br>Arellano Romero</h2>
@@ -1236,27 +1239,27 @@ ul.social li a:hover:before {
 const responses = {
     about: {
         keywords: ['about', 'who', 'brenda', 'yourself', 'tell me', 'bio', 'background'],
-        answer: "Hey! I'm Brenda 👩‍💻✨ — a Data Analyst, aspiring Data Engineer, and all-around data nerd based in Greensboro, NC. I turn messy datasets into clean pipelines, beautiful dashboards, and insights that actually matter. Currently leveling up my Master's in CS while working in the real world. I'm targeting roles in Data Engineering, Analytics Engineering, BI, Applied AI, and Data Science. Bilingual, creative, and always one query away from something interesting! 🚀"
+        answer: "Brenda is a Data Analyst and Computer Science grad from NC A&T State University, currently leveling up with her Master's degree! She's bilingual, based in Greensboro NC, and has real-world experience turning complex data into insights that actually drive decisions. She's passionate about data engineering, analytics, and applied AI — and she's always building something new on the side. Want to know more about her skills or projects?"
     },
     skills: {
         keywords: ['skill', 'tech', 'stack', 'tools', 'language', 'know', 'use', 'experience', 'expertise', 'proficient'],
-        answer: "Brenda has a diverse skill set! 🛠️\n\n• Languages: Python, Java, C++, R, SQL, HTML, CSS, JavaScript\n• Data & Analytics: Tableau, Databricks, Snowflake, Power BI, Machine Learning, LLM/AI\n• Tools: GitHub, Figma, Workday, Unity, Blender, SolidWorks\n• Other: Web Development, Project Management, Accounting, Virtual Reality\n\nShe currently works as a Data Analyst using these skills in the real world every day!"
+        answer: "Brenda brings a seriously versatile skill set to the table! She works with Python, SQL, R, Java, and JavaScript on the coding side. For data and analytics she uses Tableau, Databricks, Snowflake, and Power BI daily. She also has experience with machine learning, LLMs, and AI tools. On top of that she knows her way around GitHub, Figma, Workday, and even Unity and Blender for VR work. Want to hear about a specific area?"
     },
     projects: {
         keywords: ['project', 'work', 'built', 'created', 'developed', 'portfolio', 'application', 'app'],
-        answer: "Brenda has worked on some exciting projects! 🚀\n\n• COVID-19 AI Image Generator — CNN + GAN system using PyTorch and Django\n• AIVi VR Research — immersive VR education tool built in Unity and Blender\n• Bivariate MLE Dash App — statistical web tool with real-time visualizations\n• Lexical Analyzer — syntax analyzer using BNF grammar\n• Payment System — Java-based employee payroll simulation\n• Airline Reservation System — ticket management system in Java\n\nAsk me about any specific project for more details!"
+        answer: "Brenda has built some really cool things! She developed a COVID-19 AI Image Generator using CNNs and GANs in PyTorch, created an immersive VR education tool for agriculture using Unity and Blender, and built a statistical web app for Maximum Likelihood Estimation with real-time visualizations. She's also built a lexical analyzer, a Java payroll system, and an airline reservation system. Interested in hearing more about any of these?"
     },
     education: {
         keywords: ['education', 'school', 'degree', 'university', 'college', 'study', 'graduate', 'major', 'ncat', 'gtcc'],
-        answer: "Brenda's educational journey! 🎓\n\n• Master of Science in Computer Science — NC A&T State University (In Progress)\n• Bachelor of Science in Computer Science — NC A&T State University\n• Associates in Computer Engineering — Guilford Technical Community College\n\nShe is also a member of Upsilon Pi Epsilon Honorary Society and served as President of SHPE at NC A&T!"
+        answer: "Brenda has a solid academic foundation! She earned her Associates in Computer Engineering from Guilford Technical Community College, then her Bachelor's in Computer Science from NC A&T State University. She's currently a first-year Master's student in CS at NC A&T — all while working as a Data Analyst in the real world. She's also a member of Upsilon Pi Epsilon and served as President of SHPE at NC A&T!"
     },
     contact: {
         keywords: ['contact', 'reach', 'email', 'hire', 'connect', 'linkedin', 'github', 'touch', 'message'],
-        answer: "Want to connect with Brenda? 📬\n\n• Email: barellanor91@gmail.com\n• LinkedIn: linkedin.com/in/brenda-arellano-romero\n• GitHub: github.com/brendaar1991\n• Location: Greensboro, NC\n\nShe is currently open to new opportunities — feel free to reach out!"
+        answer: "You can reach Brenda at barellanor91@gmail.com — she's super responsive! You can also connect with her on LinkedIn at linkedin.com/in/brenda-arellano-romero or check out her code on GitHub at github.com/brendaar1991. She's based in Greensboro, NC and open to remote opportunities. She'd love to hear from you!"
     },
     opportunities: {
         keywords: ['open', 'opportunity', 'hire', 'job', 'available', 'looking', 'work', 'position', 'role', 'candidate'],
-        answer: "Yes! Brenda is actively open and excited about new opportunities! 🌟 She is targeting roles in Data Engineering, Analytics Engineering, Business Intelligence, Applied AI, and Data Science — ideally remote, mid-level, and paying over $100k. She brings real-world experience with Azure Databricks, Snowflake, Tableau, Python, and SQL. Strong interest in innovative, data-driven companies. Reach out at barellanor91@gmail.com — she would love to connect! 🚀"
+        answer: "Brenda is absolutely open to new opportunities! She's targeting roles like Data Engineer, Analytics Engineer, BI Analyst, Data Scientist, and Applied AI positions — ideally remote and mid-level. She has hands-on experience with Databricks, Snowflake, Tableau, Python, and SQL and is ready to bring that energy to the right team. Feel free to reach out at barellanor91@gmail.com!"
     }
 };
 
