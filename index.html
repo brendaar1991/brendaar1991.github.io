@@ -1245,31 +1245,35 @@ ul.social li a:hover:before {
 const responses = {
     about: {
         keywords: ['about', 'who', 'brenda', 'yourself', 'tell me', 'bio', 'background'],
-        answer: "Brenda is a Data Analyst and Computer Science grad from NC A&T State University, currently leveling up with her Master's degree! She's bilingual, based in Greensboro NC, and has real-world experience turning complex data into insights that actually drive decisions. She's passionate about data engineering, analytics, and applied AI — and she's always building something new on the side. Want to know more about her skills or projects?"
+        answer: "Brenda is a Data Analyst with a CS background, currently pursuing her Master's degree while working in the field. She's focused on Data Engineering, Analytics Engineering, BI, and Applied AI. Scroll down to explore her projects, skills, and experience!"
     },
     skills: {
         keywords: ['skill', 'tech', 'stack', 'tools', 'language', 'know', 'use', 'experience', 'expertise', 'proficient'],
-        answer: "Brenda brings a seriously versatile skill set to the table! She works with Python, SQL, R, Java, and JavaScript on the coding side. For data and analytics she uses Tableau, Databricks, Snowflake, and Power BI daily. She also has experience with machine learning, LLMs, and AI tools. On top of that she knows her way around GitHub, Figma, Workday, and even Unity and Blender for VR work. Want to hear about a specific area?"
+        answer: "Brenda works with Python, SQL, R, Java, and JavaScript on the coding side. For data and analytics she uses Tableau, Databricks, Snowflake, and Power BI daily. She also has experience with machine learning, LLMs, and AI tools. GitHub, Figma, Workday, and even Unity and Blender for VR work."
     },
     projects: {
         keywords: ['project', 'work', 'built', 'created', 'developed', 'portfolio', 'application', 'app'],
-        answer: "Brenda has built some really cool things! She developed a COVID-19 AI Image Generator using CNNs and GANs in PyTorch, created an immersive VR education tool for agriculture using Unity and Blender, and built a statistical web app for Maximum Likelihood Estimation with real-time visualizations. She's also built a lexical analyzer, a Java payroll system, and an airline reservation system. Interested in hearing more about any of these?"
+        answer: "Brenda gained hands-on industry experience as a Data Analyst Intern at Ford. She has also built projects in data science, AI, and software development, including machine learning applications, interactive analytics tools, and data-driven solutions."
     },
     education: {
         keywords: ['education', 'school', 'degree', 'university', 'college', 'study', 'graduate', 'major', 'ncat', 'gtcc'],
-        answer: "Brenda has a solid academic foundation! She earned her Associates in Computer Engineering from Guilford Technical Community College, then her Bachelor's in Computer Science from NC A&T State University. She's currently a first-year Master's student in CS at NC A&T — all while working as a Data Analyst in the real world. She's also a member of Upsilon Pi Epsilon and served as President of SHPE at NC A&T!"
+        answer: "Brenda earned her Bachelor's degree in Computer Science from NC A&T and is currently pursuing her Master's in Computer Science while working as a Data Analyst. For more details check out the Education section below."
     },
     contact: {
         keywords: ['contact', 'reach', 'email', 'hire', 'connect', 'linkedin', 'github', 'touch', 'message'],
-        answer: "You can reach Brenda at barellanor91@gmail.com — she's super responsive! You can also connect with her on LinkedIn at linkedin.com/in/brenda-arellano-romero or check out her code on GitHub at github.com/brendaar1991. She's based in Greensboro, NC and open to remote opportunities. She'd love to hear from you!"
+        answer: "You can email her at barellanor91@gmail.com or connect on LinkedIn at linkedin.com/in/brenda-arellano-romero."
     },
     opportunities: {
         keywords: ['open', 'opportunity', 'hire', 'job', 'available', 'looking', 'work', 'position', 'role', 'candidate'],
-        answer: "Brenda is absolutely open to new opportunities! She's targeting roles like Data Engineer, Analytics Engineer, BI Analyst, Data Scientist, and Applied AI positions — ideally remote and mid-level. She has hands-on experience with Databricks, Snowflake, Tableau, Python, and SQL and is ready to bring that energy to the right team. Feel free to reach out at barellanor91@gmail.com!"
+        answer: "Brenda is open to new opportunities! She's targeting roles like Data Engineer, Analytics Engineer, BI Analyst, Data Scientist, and Applied AI positions. Feel free to reach out at barellanor91@gmail.com!"
+    },
+    candidate: {
+        keywords: ['good candidate', 'why hire', 'why brenda', 'why should', 'qualify', 'fit', 'right person', 'stand out'],
+        answer: "Oh, you're asking why Brenda? Look around she built this entire portfolio from scratch AND gave me a personality. She came, she saw, she coded. Honestly, the better question is why not her?"
     }
 };
 
-const fallback = "I'm just Brenda's portfolio assistant, so I can only answer questions about her experience, skills, projects, and education. Try asking about her skills, projects, or how to contact her! 😊";
+const fallback = "That's a great question, but it's outside what I know! Feel free to ask me about her skills, projects, education, or how to get in touch!";
 
 function getResponse(input) {
     const lower = input.toLowerCase();
@@ -1277,6 +1281,18 @@ function getResponse(input) {
         if (responses[key].keywords.some(kw => lower.includes(kw))) {
             return responses[key].answer;
         }
+    }
+    if (lower.includes('hello') || lower.includes('hi') || lower.includes('hey')) {
+        return "Hey there! I'm Brenda's portfolio assistant. Ask me anything about her skills, projects, education, or how to contact her!";
+    }
+    if (lower.includes('thank') || lower.includes('thanks')) {
+        return "You're welcome! Feel free to ask anything else about Brenda!";
+    }
+    if (lower.includes('location') || lower.includes('where') || lower.includes('remote')) {
+        return "Brenda is based in Greensboro, NC and is open to fully remote opportunities across the US!";
+    }
+    if (lower.includes('resume') || lower.includes('cv')) {
+        return "You can download Brenda's resume directly from her portfolio page. just scroll down to the About section!";
     }
     return fallback;
 }
