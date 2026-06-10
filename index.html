@@ -626,8 +626,8 @@ ul.social li a:hover:before {
             </p>
             <div class="chat-widget">
                 <div class="chat-messages" id="chat-messages">
-                    <div class="chat-bubble bot">Hi! I'm Brenda's portfolio assistant 👋 Ask me anything about her experience, skills, or projects!</div>
-                </div>
+    <p style="color:rgba(255,255,255,0.25); font-size:0.9em; text-align:center; margin-top:80px;">Ask me anything about Brenda...</p>
+</div>
                 <div class="chat-quick-btns">
                     <button class="chat-quick-btn" onclick="sendQuick('Tell me about Brenda')">Tell me about Brenda</button>
                     <button class="chat-quick-btn" onclick="sendQuick('Skills')">Skills</button>
@@ -1287,10 +1287,12 @@ function addMessage(text, type) {
 
 function showThinking() {
     const messages = document.getElementById('chat-messages');
+    const placeholder = messages.querySelector('p');
+    if (placeholder) placeholder.remove();
     const thinking = document.createElement('div');
-    thinking.classList.add('chat-bubble', 'bot');
     thinking.id = 'thinking-bubble';
-    thinking.innerHTML = '<div class="thinking-dots"><span></span><span></span><span></span> <span style="font-size:0.85em; color:rgba(255,255,255,0.5); margin-left:6px;">AI is thinking...</span></div>';
+    thinking.style.cssText = 'display:flex; align-items:center; gap:6px; padding:8px 0;';
+    thinking.innerHTML = '<div class="thinking-dots"><span></span><span></span><span></span></div><span style="font-size:0.82em; color:rgba(255,255,255,0.4);">AI is thinking...</span>';
     messages.appendChild(thinking);
     messages.scrollTop = messages.scrollHeight;
 }
