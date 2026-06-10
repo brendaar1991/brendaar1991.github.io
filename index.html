@@ -588,52 +588,51 @@ ul.social li a:hover:before {
 <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
-
-		<!-- About me -->
 <article id="aboutme" class="wrapper style1">
     <div class="container">
-        <div class="row aln-middle" style="justify-content: flex-start;">
+        <!-- HERO - first thing they see -->
+        <div style="min-height: 85vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
+            <p style="font-size:1.3em; color:#ffffff; margin-bottom:0.2em; font-weight:600;">Hi, I am</p>
+            <h2 class="gradient-name">Brenda <br>Arellano Romero</h2>
+            <p style="height: 1.6em; margin-top: 0; margin-bottom: 1em; overflow: visible;">
+                <span id="typed-role" class="typed-role"></span><span class="typed-cursor">|</span>
+            </p>
+            <div class="chat-widget">
+                <div class="chat-messages" id="chat-messages">
+                    <div class="chat-bubble bot">Hi! I'm Brenda's portfolio assistant 👋 Ask me anything about her experience, skills, or projects!</div>
+                </div>
+                <div class="chat-quick-btns">
+                    <button class="chat-quick-btn" onclick="sendQuick('Tell me about Brenda')">Tell me about Brenda</button>
+                    <button class="chat-quick-btn" onclick="sendQuick('Skills')">Skills</button>
+                    <button class="chat-quick-btn" onclick="sendQuick('Projects')">Projects</button>
+                    <button class="chat-quick-btn" onclick="sendQuick('Education')">Education</button>
+                    <button class="chat-quick-btn" onclick="sendQuick('Contact')">Contact</button>
+                </div>
+                <div class="chat-input-row">
+                    <input class="chat-input" id="chat-input" type="text" placeholder="Ask me anything about Brenda..." onkeydown="if(event.key==='Enter') sendChat()" />
+                    <button class="chat-send-btn" onclick="sendChat()">➤</button>
+                </div>
+            </div>
+            <!-- Scroll to explore -->
+            <div style="margin-top: 40px; color: rgba(255,255,255,0.4); font-size:0.85em; display:flex; flex-direction:column; align-items:center; gap:8px;">
+                <span>Scroll to explore</span>
+                <span style="animation: bounceDown 1.5s infinite;">↓</span>
+            </div>
+        </div>
+
+        <!-- ABOUT - shows when they scroll -->
+        <div class="row aln-middle" style="justify-content: flex-start; padding-top: 60px;">
             <div class="col-8 col-7-large col-12-medium">
-                <header>
-                    <p style="font-size:1.7em; color:#ffffff; margin-bottom:0.2em; font-weight:600;">Hi, I am</p>
-                    <h2 class="gradient-name">Brenda <br>Arellano Romero</h2>
-<p style="height: 1.6em; margin-top: 0; margin-bottom: 0.5em; overflow: visible;"><span id="typed-role" class="typed-role"></span><span class="typed-cursor">|</span></p>
-</header>
-
-
-<div class="chat-widget">
-    <div class="chat-messages" id="chat-messages">
-        <div class="chat-bubble bot">Hi! I'm Brenda's portfolio assistant 👋 Ask me anything about her experience, skills, or projects!</div>
-    </div>
-    <div class="chat-quick-btns">
-        <button class="chat-quick-btn" onclick="sendQuick('Tell me about Brenda')">Tell me about Brenda</button>
-        <button class="chat-quick-btn" onclick="sendQuick('Skills')">Skills</button>
-        <button class="chat-quick-btn" onclick="sendQuick('Projects')">Projects</button>
-        <button class="chat-quick-btn" onclick="sendQuick('Education')">Education</button>
-        <button class="chat-quick-btn" onclick="sendQuick('Contact')">Contact</button>
-    </div>
-    <div class="chat-input-row">
-        <input class="chat-input" id="chat-input" type="text" placeholder="Ask me anything about Brenda..." onkeydown="if(event.key==='Enter') sendChat()" />
-        <button class="chat-send-btn" onclick="sendChat()">➤</button>
-    </div>
-</div>				
-                <pstyle="margin-top: 0.5em;"><strong>I’m a Computer Science graduate from North Carolina A&T State University and an emerging data scientist 
-					passionate about transforming data into actionable insights and building impactful,
-					user-friendly solutions.
-I constantly improve my skills by building projects,
-					exploring new technologies, and solving real-world data and software engineering challenges.</strong></p>
+                <p style="margin-top: 0.5em;"><strong>I'm a Computer Science graduate from North Carolina A&T State University and an emerging data scientist passionate about transforming data into actionable insights and building impactful, user-friendly solutions. I constantly improve my skills by building projects, exploring new technologies, and solving real-world data and software engineering challenges.</strong></p>
                 <h4>Lets connect</h4>
                 <ul class="social">
                     <li><a href="https://www.linkedin.com/in/brenda-arellano-romero/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
                     <li><a href="https://github.com/brendaar1991" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
                 </ul>
                 <br>
-				<!-- Resume -->
                 <div class="download-link">
-					<a href="images/B_Arellano_Romero1.pdf" class="button small" target="_blank">
-					Download Resume
-					</a>
-					</div>
+                    <a href="images/B_Arellano_Romero1.pdf" class="button small" target="_blank">Download Resume</a>
+                </div>
             </div>
             <div class="col-4 col-5-large col-12-medium">
                 <div class="hero-photo-card">
@@ -645,6 +644,7 @@ I constantly improve my skills by building projects,
         </div>
     </div>
 </article>
+
 <!-- education -->
 			<article id="education" class="wrapper style2">
     <div class="container">
