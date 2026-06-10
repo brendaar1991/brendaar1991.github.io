@@ -578,7 +578,7 @@ ul.social li a:hover:before {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.6);
+    background: #7c3aed;
     animation: thinkingBounce 1.2s infinite;
     display: inline-block;
 }
@@ -1287,7 +1287,7 @@ function showThinking() {
     const thinking = document.createElement('div');
     thinking.classList.add('chat-bubble', 'bot');
     thinking.id = 'thinking-bubble';
-    thinking.innerHTML = '<div class="thinking-dots"><span></span><span></span><span></span></div>';
+    thinking.innerHTML = '<div class="thinking-dots"><span></span><span></span><span></span> <span style="font-size:0.85em; color:rgba(255,255,255,0.5); margin-left:6px;">AI is thinking...</span></div>';
     messages.appendChild(thinking);
     messages.scrollTop = messages.scrollHeight;
 }
